@@ -14,7 +14,7 @@ class PyPydpiper(PythonPackage):
 
     maintainers = ['bcdarwin']
 
-    # TODO bump version to get most recent post-2.0.15 fixes
+    version('master', branch='master')
     version('2.0.15', sha256='9c687ecc0dfaba5954300a858c952362')
 
     depends_on('python@3.7:')
