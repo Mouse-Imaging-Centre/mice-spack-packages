@@ -13,6 +13,7 @@ class MiceLab(AutotoolsPackage, PythonPackage):
     homepage = "https://github.com/Mouse-Imaging-Centre/MICe-lab"
     url      = "https://github.com/Mouse-Imaging-Centre/MICe-lab/archive/refs/tags/0.18.tar.gz"
 
+    version('0.19', sha256='5874aed4d4f2a2dd2d7ae3ab51b3743a')
     version('0.18', sha256='d95ac9ebc8f112135226ec36bda5f4d4')
 
     phases = ['autoreconf', 'configure', 'build', 'python_build', 'install', 'python_install']
