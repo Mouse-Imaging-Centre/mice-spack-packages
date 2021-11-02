@@ -10,12 +10,12 @@ class PyPydpiper(PythonPackage):
     """Neuroimaging pipeline library/framework and pipelines"""
 
     homepage = "https://github.com/Mouse-Imaging-Centre/pydpiper"
+    git      = "https://github.com/Mouse-Imaging-Centre/pydpiper.git"
     url = "https://github.com/Mouse-Imaging-Centre/pydpiper/archive/refs/tags/v2.0.15.tar.gz"
 
     maintainers = ['bcdarwin']
 
-    version('master', branch='master')
-    version('2.0.15', sha256='9c687ecc0dfaba5954300a858c952362')
+    version('2.0.15', commit="8d3f355ef8fda7cd73723734c0d4d2cc0f9f0e32")
 
     depends_on('python@3.7:')
     depends_on('py-pytest', type='build')
@@ -26,6 +26,7 @@ class PyPydpiper(PythonPackage):
     depends_on('py-pandas')
     depends_on('py-pyro4')
     depends_on('py-pyminc')
+    depends_on('py-minc2-simple')
 
     depends_on('minc-toolkit +shared')
     depends_on('minc-stuffs')
