@@ -3,6 +3,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+import os
 
 from spack import *
 
@@ -15,21 +16,13 @@ class PyMinc2Simple(CMakePackage, PythonPackage):
 
     version('2021-05-11', commit="6382802dd6e3f712d394c7d708281d05b7e9a82b")
 
-    phases = ['cmake', 'build', 'python_build', 'install', 'python_install']
-
     depends_on('minc-toolkit')
     depends_on('py-cffi')
     depends_on('py-numpy')
     depends_on('py-six')
 
-    def python_build(self, spec, prefix):
-        self._build_directory = 'python'
-        PythonPackage.build_ext(self, spec, prefix)
-
-    def python_install(self, spec, prefix):
-        PythonPackage.install(self, spec, prefix)
-
-    def setup_py(self, *args, **kwargs):
-        setup = self.setup_file()
-
-        self.python('-s', join_path("python", setup), '--no-user-cfg', *args, **kwargs)
+    def install(self, spec, prefix):
+        CMakePackage.install(self, spec, prefix)
+        with working_dir('python'):
+            args = std_pip_args + ['--prefix=' + self.prefix, '.']
+            pip(*args)

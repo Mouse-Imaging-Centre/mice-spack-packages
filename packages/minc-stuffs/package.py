@@ -26,19 +26,6 @@ class MincStuffs(AutotoolsPackage, PythonPackage):
     depends_on('minc-toolkit')
     depends_on('py-pyminc')
 
-    phases = ['autoreconf', 'configure', 'build', 'python_build', 'install', 'python_install']
-
-    def autoreconf(self, spec, prefix):
-        autoreconf('--install', '--verbose', '--force')
-
-    def python_build(self, spec, prefix):
-        self._build_directory = 'python'
-        PythonPackage.build_ext(self, spec, prefix)
-
-    def python_install(self, spec, prefix):
-        PythonPackage.install(self, spec, prefix)
-
-    def setup_py(self, *args, **kwargs):
-        setup = self.setup_file()
-
-        self.python('-s', setup, '--no-user-cfg', *args, **kwargs)
+    @run_after("install")
+    def python_install(self):
+        PythonPackage.install(self, self.spec, self.prefix)

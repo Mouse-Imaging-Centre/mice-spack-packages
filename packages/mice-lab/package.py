@@ -16,29 +16,26 @@ class MiceLab(AutotoolsPackage, PythonPackage):
     version('0.19', sha256='5874aed4d4f2a2dd2d7ae3ab51b3743a')
     version('0.18', sha256='d95ac9ebc8f112135226ec36bda5f4d4')
 
-    phases = ['autoreconf', 'configure', 'build', 'python_build', 'install', 'python_install']
-
     depends_on('autoconf', type='build')
     depends_on('automake', type='build')
     depends_on('libtool',  type='build')
     depends_on('m4',       type='build')
     depends_on('perl')
-    depends_on('minc-toolkit')
-    depends_on('py-pyminc')
-    depends_on('py-pydpiper')
-    depends_on('opencv +python3 +python_bindings_generator')
+    depends_on('perl-getopt-tabular', type=('build', 'run'))
+    depends_on('perl-mni-perllib', type=('build', 'run'))
+    depends_on('minc-toolkit', type=('build', 'run'))
+    depends_on('py-pyminc', type=('build', 'run'))
+    depends_on('py-pydpiper', type=('build', 'run'))
+    depends_on('opencv +python3 +python_bindings_generator', type=('build', 'run'))
 
     def autoreconf(self, spec, prefix):
         autoreconf('--install', '--verbose', '--force')
 
-    def python_build(self, spec, prefix):
-        self._build_directory = 'python'
-        PythonPackage.build_ext(self, spec, prefix)
+    @run_after('install')
+    def python_install(self):
+        PythonPackage.install(self, self.spec, self.prefix)
 
-    def python_install(self, spec, prefix):
-        PythonPackage.install(self, spec, prefix)
-
+    # is this needed?
     def setup_py(self, *args, **kwargs):
         setup = self.setup_file()
-
         self.python('-s', setup, '--no-user-cfg', *args, **kwargs)
