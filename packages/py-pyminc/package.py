@@ -14,6 +14,7 @@ class PyPyminc(PythonPackage):
 
     maintainers = ['bcdarwin']
 
+    version('0.55', 'c794e8bdd25852397fee7196140ae512')
     version('0.54', '44f79dc4f09781a6c8b80b1d6a58363c')
 
     depends_on('python@3.7:')
