@@ -23,7 +23,7 @@ class MincStuffs(AutotoolsPackage, PythonPackage):
     depends_on('libtool',  type='build')
     depends_on('m4',       type='build')
     depends_on('perl', type=('build', 'run'))
-    depends_on('minc-toolkit', type=('build', 'run'))
+    depends_on('minc-toolkit', type=('build', 'link', 'run'))
     depends_on('py-pyminc', type=('build', 'run'))
     depends_on('py-scipy', type=('build', 'run'))
 
