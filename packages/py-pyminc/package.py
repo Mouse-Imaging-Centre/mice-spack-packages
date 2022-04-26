@@ -20,6 +20,6 @@ class PyPyminc(PythonPackage):
     depends_on('python@3.7:')
     depends_on('py-pytest', type='build')
     depends_on('py-parameterized', type='build')
-    depends_on('py-numpy')
-    depends_on('minc-toolkit +shared')
+    depends_on('py-numpy', type=('build', 'run'))
+    depends_on('minc-toolkit +shared', type='run')
 
