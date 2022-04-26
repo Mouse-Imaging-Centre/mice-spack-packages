@@ -27,6 +27,7 @@ class PyPydpiper(PythonPackage):
     depends_on('py-pyro4')
     depends_on('py-pyminc')
     depends_on('py-minc2-simple')
+    depends_on('py-qbatch')
 
     depends_on('minc-toolkit +shared')
     depends_on('minc-stuffs')
