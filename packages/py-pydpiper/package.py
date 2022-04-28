@@ -24,10 +24,11 @@ class PyPydpiper(PythonPackage):
     depends_on('py-configargparse', type=('build', 'run'))
     depends_on('py-numpy', type=('build', 'run'))
     depends_on('py-pandas', type=('build', 'run'))
+    depends_on('py-serpent', type=('build', 'run'))
     depends_on('py-pyro4', type=('build', 'run'))
     depends_on('py-pyminc', type=('build', 'run'))
     depends_on('py-minc2-simple', type=('build', 'run'))
     depends_on('py-qbatch', type=('build', 'run'))
 
-    depends_on('minc-toolkit +shared')
-    depends_on('minc-stuffs')
+    depends_on('minc-toolkit +shared', type='run')
+    depends_on('minc-stuffs', type='run')
