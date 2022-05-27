@@ -15,6 +15,7 @@ class PyPydpiper(PythonPackage):
 
     maintainers = ['bcdarwin']
 
+    version('2.0.16', sha256="5283a38f3d8ae1881f49e8fb834dccb92f81acd5")
     version('2.0.15', commit="8d3f355ef8fda7cd73723734c0d4d2cc0f9f0e32")
 
     depends_on('python@3.7:')
