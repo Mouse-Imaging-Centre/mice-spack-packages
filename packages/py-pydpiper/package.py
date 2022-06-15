@@ -15,6 +15,7 @@ class PyPydpiper(PythonPackage):
 
     maintainers = ['bcdarwin']
 
+    version('2.0.17', sha256="9a7ffaa2581cb920c96ae6d32ab7ae91a8982468")
     version('2.0.16', sha256="5283a38f3d8ae1881f49e8fb834dccb92f81acd5")
     version('2.0.15', commit="8d3f355ef8fda7cd73723734c0d4d2cc0f9f0e32")
 
@@ -23,6 +24,7 @@ class PyPydpiper(PythonPackage):
     depends_on('py-networkx', type=('build', 'run'))
     depends_on('py-ordered-set', type=('build', 'run'))
     depends_on('py-configargparse', type=('build', 'run'))
+    depends_on('py-jinja2', type=('build', 'run'))
     depends_on('py-numpy', type=('build', 'run'))
     depends_on('py-pandas', type=('build', 'run'))
     depends_on('py-serpent', type=('build', 'run'))
