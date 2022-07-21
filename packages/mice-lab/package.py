@@ -26,6 +26,7 @@ class MiceLab(AutotoolsPackage, PythonPackage):
     depends_on('minc-toolkit', type=('build', 'run'))
     depends_on('py-pyminc', type=('build', 'run'))
     depends_on('py-pydpiper', type=('build', 'run'))
+    depends_on('py-matplotlib', type=('build', 'run'))
     depends_on('opencv +python3 +python_bindings_generator', type=('build', 'run'))
 
     def autoreconf(self, spec, prefix):
