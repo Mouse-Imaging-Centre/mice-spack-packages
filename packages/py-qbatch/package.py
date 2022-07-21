@@ -18,3 +18,5 @@ class PyQbatch(PythonPackage):
     version('2.3', sha256="f55337ce1ab9807deac638a506d43e219a795cbc")
 
     depends_on('python@3.7:')
+
+    depends_on('py-future', type=('build', 'run'))
