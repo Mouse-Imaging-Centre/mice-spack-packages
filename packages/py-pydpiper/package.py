@@ -15,6 +15,7 @@ class PyPydpiper(PythonPackage):
 
     maintainers = ['bcdarwin']
 
+    version('2.0.19', sha256="29596140cee7e1f3e9ad5cbab40c3d90bbd4764fc515ec33426092eddae01615")
     version('2.0.18', sha256="5fec8c79978ae25e8deb4d92163b0b2b7fdc72e9")
     version('2.0.17', sha256="9a7ffaa2581cb920c96ae6d32ab7ae91a8982468")
     version('2.0.16', sha256="5283a38f3d8ae1881f49e8fb834dccb92f81acd5")
