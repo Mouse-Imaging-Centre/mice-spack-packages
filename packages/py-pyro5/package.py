@@ -15,4 +15,5 @@ class PyPyro5(PythonPackage):
 
     version('5.13.1', sha256='2be9da379ae0ec4cf69ffb3c5c589b698eea00e614a9af7945b87fa9bb09baf2')
 
+    depends_on('py-setuptools', type='build')
     depends_on('py-serpent', type=('build', 'run'))

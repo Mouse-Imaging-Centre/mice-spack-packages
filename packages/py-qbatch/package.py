@@ -19,4 +19,5 @@ class PyQbatch(PythonPackage):
 
     depends_on('python@3.7:')
 
+    depends_on('py-setuptools', type='build')
     depends_on('py-future', type=('build', 'run'))
