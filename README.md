@@ -27,3 +27,4 @@ Building the set of packages:
 1. install R packages and make a module (assumes you have devtools and packrat installed e.g. as a user, from previous Spack env, Packrat env, etc.):
 1. `echo 'depends_on('r-packages/<version>') >> /path/to/StdEnv.lua`
 1. configure qbatch, RMINC, and Pydpiper by setting PYDPIPER_CONFIG_FILE, RMINC_BATCH_CONF, and relevant QBATCH vars (e.g. in modulefiles)
+1. if you blacklisted LD_LIBRARY_PATH in the module generation, hack the modules to add ${pkgs.flex}/lib to LD_LIBRARY_PATH in order for minccalc to work
