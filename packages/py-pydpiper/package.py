@@ -39,3 +39,4 @@ class PyPydpiper(PythonPackage):
     depends_on('cctools', type='run', when='@2.0.18:')
     depends_on('minc-toolkit +shared', type='run')
     depends_on('minc-stuffs', type='run')
+    depends_on('imagemagick', type='run')
