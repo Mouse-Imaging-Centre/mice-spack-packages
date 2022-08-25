@@ -21,3 +21,4 @@ class PyQbatch(PythonPackage):
 
     depends_on('py-setuptools', type='build')
     depends_on('py-future', type=('build', 'run'))
+    depends_on('parallel', type='run')
